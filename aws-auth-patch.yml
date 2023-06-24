@@ -4,12 +4,13 @@ data:
     - groups:
       - system:bootstrappers
       - system:nodes
-      rolearn: <node_instance_role_arn>
+      - system:masters
+      rolearn: arn:aws:iam::013241101417:role/UdacityFlaskDeployCBKubectlRole/eks-quickstart-test-ManagedNodeInstance
       username: system:node:{{EC2PrivateDNSName}}
     - groups:
       - system:masters
       rolearn: arn:aws:iam::013241101417:role/UdacityFlaskDeployCBKubectlRole
-      username: build
+      username: system:node:{{EC2PrivateDNSName}}
 kind: ConfigMap
 metadata:
   name: aws-auth
