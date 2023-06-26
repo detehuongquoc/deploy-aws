@@ -44,10 +44,8 @@ phases:
 
   post_build:
     commands:
-      - export AWS_ACCESS_KEY_ID=ASIAQGFJ3FRU4MYCWNX6
-      - export AWS_SECRET_ACCESS_KEY=UedTwfOXAuFjVIwBXV3J5yidvsfgghTL/HejX1pI
-      - export AWS_SESSION_TOKEN=FwoGZXIvYXdzEOf//////////wEaDGbxF4WcBO+xQP+QiSLVAflv64nhUxGpwUR5NIm1mM9tHzVfGx5JFwbcN049DeUI8RRrJ1Ja9iwvZ9/Z80MKbNSURmHrgPzHL+qZ9mBfMsGts/WLZHxLqaF+Umfj7WQ26Gi9lIhekvqKvF/B9aLW0N0ee6nJyvYUXVD3PEjBwPxE+ZIuMj2+c4V1BaAC4/2NBTPm5kRDTxfwTvS5YjbN4M/ibw7owLMJruk3v32/zXEjKnjhAiImOe5kzvrwkCYZZIVbEkzDVBF41FBpaMJ9r7z+LNCiBGVAERVzqaMuE2s7XJxsvSiR1OSkBjItoxywXAChEGKt5au1ab+LmbViVSvx9rJgUUuwoPYjmkvGe425+yEDIDi2binj
-      - docker push $REPOSITORY_URI:$TAG
+      - pip3 install -r requirements.txt 
+      - python -m pytest test_main.py
       - echo $EKS_CLUSTER_NAME
       - echo $EKS_KUBECTL_ROLE_ARN
       - aws eks --region us-east-2 update-kubeconfig --name simple-jwt-api
