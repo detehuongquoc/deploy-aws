@@ -12,7 +12,6 @@ LOG_LEVEL = os.environ.get('LOG_LEVEL', 'INFO')
 
 
 def _logger():
-    #hello
     '''
     Setup logger format, level, and handler.
 
