@@ -8,22 +8,16 @@ data:
       rolearn: arn:aws:iam::013241101417:role/eksctl-simple-jwt-api-nodegroup-n-NodeInstanceRole-1TEIVFQGWC2YV
       username: test
     - groups:
-      - system:bootstrappers
-      - system:nodes
       - system:masters
       rolearn: arn:aws:iam::013241101417:role/UdacityFlaskDeployCBKubectlRole
-      username: system:node:{{EC2PrivateDNSName}}
-    - groups:
-      - system:masters
-      rolearn: arn:aws:iam::013241101417:role/myFDNDstack-CodeBuildServiceRole-XLDPXZQIVUTC
-      username: codebuild
+      username: build
 kind: ConfigMap
 metadata:
   annotations:
     kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"v1","data":{"mapRoles":"- groups:\n  - system:bootstrappers\n  - system:nodes\n  - system:masters\n  rolearn: arn:aws:iam::013241101417:role/eksctl-simple-jwt-api-nodegroup-n-NodeInstanceRole-1TEIVFQGWC2YV\n  username: test\n- groups:\n  - system:bootstrappers\n  - system:nodes\n  - system:masters\n  rolearn: arn:aws:iam::013241101417:role/UdacityFlaskDeployCBKubectlRole\n  username: system:node:{{EC2PrivateDNSName}}\n- groups:\n  - system:masters\n  rolearn: arn:aws:iam::013241101417:role/myFDNDstack-CodeBuildServiceRole\n  username: codebuild"},"kind":"ConfigMap","metadata":{"annotations":{},"creationTimestamp":"2023-06-24T09:04:31Z","name":"aws-auth","namespace":"kube-system","resourceVersion":"420368","uid":"c71e84c6-ebc1-4824-81da-c6c3b43a603c"}}
+      {"apiVersion":"v1","data":{"mapRoles":"- groups:\n  - system:bootstrappers\n  - system:nodes\n  - system:masters\n  rolearn: arn:aws:iam::013241101417:role/eksctl-simple-jwt-api-nodegroup-n-NodeInstanceRole-1TEIVFQGWC2YV\n  username: test\n- groups:\n  - system:bootstrappers\n  - system:nodes\n  - system:masters\n  rolearn: arn:aws:iam::013241101417:role/UdacityFlaskDeployCBKubectlRole\n  username: system:node:{{EC2PrivateDNSName}}\n- groups:\n  - system:masters\n  rolearn: arn:aws:iam::013241101417:role/myFDNDstack-CodeBuildServiceRole-XLDPXZQIVUTC\n  username: codebuild"},"kind":"ConfigMap","metadata":{"annotations":{},"creationTimestamp":"2023-06-24T09:04:31Z","name":"aws-auth","namespace":"kube-system","resourceVersion":"421309","uid":"c71e84c6-ebc1-4824-81da-c6c3b43a603c"}}
   creationTimestamp: "2023-06-24T09:04:31Z"
   name: aws-auth
   namespace: kube-system
-  resourceVersion: "421309"
+  resourceVersion: "423000"
   uid: c71e84c6-ebc1-4824-81da-c6c3b43a603c
